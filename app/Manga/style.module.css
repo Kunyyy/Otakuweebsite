@@ -1,0 +1,169 @@
+.link ul {
+    list-style: none;
+}
+  
+.link li {
+    margin-bottom: 12px;
+}
+
+.link li:before {
+    content: '✓';
+    margin-right: 10px;
+}
+
+.underlines {
+    position: relative;
+}
+
+.underlines::after {
+    content: "";
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    border: 1px solid red;
+    width: 100%;
+}
+
+.underline {
+    border-bottom: 4px solid #494c54;
+    border-radius: 30px;
+    width: 90px;
+    margin: 0 auto;
+}
+
+.contact {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    margin-right: 12px;
+    margin-left: 12px;
+}
+  
+.contact a {
+    margin: 24px;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 3px;
+    color: white;
+    font-size: 18px;
+    text-transform: uppercase;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    height: 45px;
+}
+
+.twitter {
+    background-color: #1DA1F2;
+}
+
+.instagram {
+    background-color: #C13584;
+}
+
+.saweria {
+    background-color: #FAAE2B;
+}
+
+.paypal {
+    background-color: #003087;
+}
+
+.twitter:hover {
+    background-color: #0d8bf0;
+}
+
+.instagram:hover {
+    background-color: #b12d73;
+}
+
+.saweria:hover {
+    background-color: #f0a021;
+}
+
+.paypal:hover {
+    background-color: #00226d;
+}
+
+.twitter i, .instagram i, .saweria i, .paypal i {
+    margin-right: 8px;
+    color: #ffffff;
+    padding-right: 10px;
+    padding-top: 10px;
+    border-right: 1px solid white;
+    height: 100%;
+}
+
+.dropdown {
+    position: relative;
+    display: inline-block;
+  }
+  
+.select {
+    display: flex;
+    align-items: center;
+    background-color: #ffffff;
+    border-radius: 4px;
+    padding: 8px;
+    cursor: pointer;
+}
+
+.selected {
+margin-right: 8px;
+}
+
+.caret {
+width: 0;
+height: 0;
+border-style: solid;
+border-width: 6px 6px 0 6px;
+border-color: #000000 transparent transparent transparent;
+}
+
+.dropdown-content {
+display: none;
+position: absolute;
+background-color: #f9f9f9;
+min-width: 160px;
+box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
+z-index: 1;
+}
+
+.dropdown-content ul {
+list-style-type: none;
+margin: 0;
+padding: 0;
+}
+
+.dropdown-content ul li {
+padding: 8px 16px;
+}
+
+.dropdown:hover .dropdown-content {
+display: block;
+}
+  
+.images {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.images img {
+    max-width: 80%;
+}
+
+@media all and (max-width: 640px) {
+
+    .contact button {
+        margin: 12px;
+        padding: 8px 16px;
+        font-size: 16px;
+        height: 35px;
+    }
+
+    .underline {
+        width: 70px;
+    }
+}
