@@ -9,7 +9,6 @@ const gettingData = async(parameters) => {
     process.env.PUPPETEER_CACHE_DIR = './cache';
     const browser = await puppeteer.launch({
         headless: 'new',
-        executablePath: './executable',
         args: ['--enable-logging', '--v=1'], // Enable logging
     });
     const page = await browser.newPage();
