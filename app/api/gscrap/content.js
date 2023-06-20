@@ -7,9 +7,11 @@ import { PrismaClient } from "@prisma/client";
 const getting = async(parameters) => {
   const site = "https://www3.gogoanimes.fi";
   const url = `https://www3.gogoanimes.fi/category/${parameters}`;
-
+  process.env.PUPPETEER_CACHE_DIR = './cache';
   const browser = await puppeteer.launch({
     headless: 'new',
+    executablePath: './executable',
+    args: ['--enable-logging', '--v=1'], // Enable logging
   });
   const page = await browser.newPage();
   await page.setDefaultNavigationTimeout(60000);
