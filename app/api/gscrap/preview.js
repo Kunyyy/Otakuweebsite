@@ -2,16 +2,17 @@
 
 import cheerio from "cheerio";
 import puppeteer from "puppeteer-core";
-import chrome from 'chrome-aws-lambda';
+import chromium from 'chrome-aws-lambda';
 import { PrismaClient } from "@prisma/client";
 
 const gettingData = async(parameters) => {
     const url = `https://www3.gogoanimes.fi/category/${parameters}`;
-    const browser = await puppeteer.launch({
-        executablePath: await chrome.executablePath,
-        args: chrome.args,
-        defaultViewport: chrome.defaultViewport,
-        headless: chrome.headless,
+    const browser = await chromium.puppeteer.launch({
+        args: chromium.args,
+        defaultViewport: chromium.defaultViewport,
+        executablePath: await chromium.executablePath,
+        headless: chromium.headless,
+        ignoreHTTPSErrors: true,
     });
     const page = await browser.newPage();
     await page.setDefaultNavigationTimeout(60000);
