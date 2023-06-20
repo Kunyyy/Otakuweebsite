@@ -1,7 +1,7 @@
 'use server';
 
 import cheerio from "cheerio";
-import puppeteer from "puppeteer";
+import puppeteer from "puppeteer-core";
 import { PrismaClient } from "@prisma/client";
 
 const getting = async(parameters) => {
