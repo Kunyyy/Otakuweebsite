@@ -5,8 +5,8 @@
   "scripts": {
     "dev": "next dev",
     "postinstall": "prisma generate",
-    "build": "prisma generate && next build",
-    "start": "npm install && next start",
+    "build": "npm install --legacy-peer-deps && prisma generate && next build",
+    "start": "npm install --force && next start",
     "lint": "next lint"
   },
   "dependencies": {
