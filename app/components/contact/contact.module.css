@@ -1,0 +1,62 @@
+.contact {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    margin-right: 12px;
+    margin-left: 12px;
+}
+  
+.contact a {
+    margin: 6px;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 3px;
+    color: white;
+    font-size: 18px;
+    text-transform: uppercase;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    height: 45px;
+}
+
+.twitter {
+    background-color: #1DA1F2;
+}
+
+.instagram {
+    background-color: #C13584;
+}
+
+.saweria {
+    background-color: #FAAE2B;
+}
+
+.paypal {
+    background-color: #003087;
+}
+
+.twitter:hover {
+    background-color: #0d8bf0;
+}
+
+.instagram:hover {
+    background-color: #b12d73;
+}
+
+.saweria:hover {
+    background-color: #f0a021;
+}
+
+.paypal:hover {
+    background-color: #00226d;
+}
+
+.twitter i, .instagram i, .saweria i, .paypal i {
+    margin-right: 8px;
+    color: #ffffff;
+    padding-right: 10px;
+    padding-top: 10px;
+    border-right: 1px solid white;
+    height: 100%;
+}
