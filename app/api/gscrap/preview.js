@@ -7,7 +7,9 @@ import { PrismaClient } from "@prisma/client";
 const gettingData = async(parameters) => {
     const url = `https://www3.gogoanimes.fi/category/${parameters}`;
 
-    const browser = await puppeteer.launch();
+    const browser = await puppeteer.launch({
+        headless: 'new',
+    });
     const page = await browser.newPage();
     await page.goto(url);
 
