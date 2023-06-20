@@ -47,7 +47,6 @@ export default function Anime() {
         window.location.href = "/Anime/Animelist";
     }
 
-
     if (!loading) {
 
         return (

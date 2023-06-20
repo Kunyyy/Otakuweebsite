@@ -29,6 +29,7 @@ const gettingData = async(parameters) => {
 }
 
 export default async function previewUpload(title, alias, jp, status, deskripsi, parameters) {
+    console.log('databases')
     const prisma = new PrismaClient
     const { images } = await gettingData(parameters);
 
