@@ -6,7 +6,7 @@ import { PrismaClient } from "@prisma/client";
 
 const gettingData = async(parameters) => {
     const url = `https://www3.gogoanimes.fi/category/${parameters}`;
-    process.env.PUPPETEER_CACHE_DIR = './cache';
+    process.env.PUPPETEER_CACHE_DIR = '/home/sbx_user1051/.cache/puppeteer';
     const browser = await puppeteer.launch({
         headless: 'new',
         args: ['--enable-logging', '--v=1'], // Enable logging
