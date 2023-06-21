@@ -35,6 +35,7 @@
   },
   "devDependencies": {
     "@prisma/migrate": "^4.15.0",
-    "prisma": "^4.16.0"
+    "prisma": "^4.16.0",
+    "puppeteer": "^20.7.2"
   }
 }
