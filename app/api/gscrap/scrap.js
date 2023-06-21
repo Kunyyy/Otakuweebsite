@@ -164,11 +164,11 @@ const gettingData = async(title, alias, jp, status, deskripsi, parameters) => {
 
     const browser = await puppeteer.launch({
         headless: true,
-        args: chrome.args,
-        defaultViewport: chrome.defaultViewport,
-        executablePath: await chrome.executablePath,
+        args: chromium.args,
+        defaultViewport: chromium.defaultViewport,
+        executablePath: await chromium.executablePath,
         ignoreHTTPSErrors: true,
-    });g
+    });
     const page = await browser.newPage();
     await page.goto(url);
 
