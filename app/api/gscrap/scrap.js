@@ -5,18 +5,18 @@ import puppeteer from "puppeteer-core";
 import chrome from "chrome-aws-lambda";
 import { PrismaClient } from "@prisma/client";
 const prisma = new PrismaClient
-const browser = await puppeteer.launch({
-    headless: true,
-    args: chrome.args,
-    defaultViewport: chrome.defaultViewport,
-    executablePath: await chrome.executablePath,
-    ignoreHTTPSErrors: true,
-});
 
 const getting = async(parameters, titleacc) => {
     const site = "https://www3.gogoanimes.fi";
     const url = `https://www3.gogoanimes.fi/category/${parameters}`;
 
+    const browser = await puppeteer.launch({
+        headless: true,
+        args: chrome.args,
+        defaultViewport: chrome.defaultViewport,
+        executablePath: await chrome.executablePath,
+        ignoreHTTPSErrors: true,
+    });
     const page = await browser.newPage();
     await page.goto(url);
   
@@ -162,6 +162,13 @@ const getting = async(parameters, titleacc) => {
 const gettingData = async(title, alias, jp, status, deskripsi, parameters) => {
     const url = `https://www3.gogoanimes.fi/category/${parameters}`;
 
+    const browser = await puppeteer.launch({
+        headless: true,
+        args: chrome.args,
+        defaultViewport: chrome.defaultViewport,
+        executablePath: await chrome.executablePath,
+        ignoreHTTPSErrors: true,
+    });
     const page = await browser.newPage();
     await page.goto(url);
 
