@@ -2,7 +2,7 @@
 
 import { useEffect, useState } from "react";
 import style from './adm.module.css';
-import Inputs from '../Anime/Inputs';
+import Inputs from './Inputs';
 import updatedDB from './updatedb';
 
 export default function Editform({ isVisible, onClose, databases }) {
