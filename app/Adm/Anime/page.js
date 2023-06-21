@@ -5,8 +5,7 @@ import style from './adm.module.css';
 import Nav from '@/app/components/adm-nav/nav';
 import Inputs from './Inputs';
 import Options from "./Options";
-import previewUpload from '../../api/gscrap/preview';
-import dbUpload from '../../api/gscrap/content';
+import uploads from '../../api/gscrap/scrap';
 
 function Admin() {
 
@@ -62,7 +61,6 @@ function Admin() {
     const [status, setStatus] = useState('Ongoing');
 
     const [parameters, setParameters] = useState('');
-    const [titlealias, setTitlealias] = useState('');
 
     const [deskripsifull, setDeskripsifull] = useState('');
 
@@ -81,7 +79,7 @@ function Admin() {
         }
 
         if (title && alias && jp && deskripsifull && preview) {            
-            const transfers = await previewUpload(title, alias, jp, status, deskripsifull, preview);
+            const transfers = await uploads(title, alias, jp, status, deskripsifull, preview, "preview");
             if (transfers) {
                 alert(`Success => ID: ${transfers}`);
             } else {
@@ -96,8 +94,8 @@ function Admin() {
     const onSubmitFile = async(e) => {
         e.preventDefault();
 
-        if (parameters && titlealias) {
-            const transferss = await dbUpload(parameters, titlealias);
+        if (parameters && alias) {
+            const transferss = await uploads(title, alias, jp, status, "deskripsifull", parameters, "content");
             if (transferss) {
                 alert(`Success ID: ${transferss}`);
             } else {
@@ -146,7 +144,7 @@ function Admin() {
                     </div>
                     <div className={style['upload']}>
                         <form method="POST" encType="multipart/form-data">
-                            <Inputs label="Title" value={ titlealias } onChange={ (e) => setTitlealias(e.target.value) } />
+                            <Inputs label="Title" value={ alias } onChange={ (e) => setTitlealias(e.target.value) } />
                             <Inputs label="Parameter" value={ parameters } onChange={ (e) => setParameters(e.target.value) } />
                             <button type="submit" onClick={ onSubmitFile }>Upload</button>
                         </form>
