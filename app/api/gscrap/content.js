@@ -2,6 +2,7 @@
 
 import cheerio from "cheerio";
 import puppeteer from "puppeteer-core";
+import chrome, { defaultViewport } from "chrome-aws-lambda";
 import { PrismaClient } from "@prisma/client";
 
 const getting = async(parameters) => {
@@ -10,13 +11,10 @@ const getting = async(parameters) => {
 
   const browser = await puppeteer.launch({
     headless: true,
-    slowMo: 500,
-    devtools: true,
-    product: 'chrome',
-    args:[
-        '-wait-for-browser'
-    ],
-    executablePath: 'C:/Program Files/Google/Chrome/Application/chrome.exe'
+    args: [...chrome.args, "--hide-scrollbars", "--disable-web-security"],
+    defaultViewport: chrome.defaultViewport,
+    executablePath: await chrome.executablePath,
+    ignoreHTTPSErrors: true,
   });
   const page = await browser.newPage();
   await page.goto(url);
