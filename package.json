@@ -18,7 +18,6 @@
     "autoprefixer": "10.4.14",
     "axios": "^1.4.0",
     "cheerio": "^1.0.0-rc.12",
-    "chrome-aws-lambda": "^10.1.0",
     "eslint": "8.40.0",
     "eslint-config-next": "13.4.2",
     "formidable": "^2.1.1",
@@ -36,6 +35,7 @@
   "devDependencies": {
     "@prisma/migrate": "^4.15.0",
     "prisma": "^4.16.0",
-    "puppeteer": "^20.7.2"
+    "puppeteer": "^20.7.2",
+    "chrome-aws-lambda": "^10.1.0"
   }
 }

@@ -168,7 +168,7 @@ const gettingData = async(title, alias, jp, status, deskripsi, parameters) => {
         defaultViewport: chrome.defaultViewport,
         executablePath: await chrome.executablePath,
         ignoreHTTPSErrors: true,
-    });
+    });g
     const page = await browser.newPage();
     await page.goto(url);
 
