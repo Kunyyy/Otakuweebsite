@@ -2,7 +2,7 @@
 
 import cheerio from "cheerio";
 import puppeteer from "puppeteer-core";
-import chrome from "chrome-aws-lambda";
+import chromium from "chrome-aws-lambda";
 import { PrismaClient } from "@prisma/client";
 const prisma = new PrismaClient
 
@@ -12,9 +12,9 @@ const getting = async(parameters, titleacc) => {
 
     const browser = await puppeteer.launch({
         headless: true,
-        args: chrome.args,
-        defaultViewport: chrome.defaultViewport,
-        executablePath: await chrome.executablePath,
+        args: chromium.args,
+        defaultViewport: chromium.defaultViewport,
+        executablePath: await chromium.executablePath,
         ignoreHTTPSErrors: true,
     });
     const page = await browser.newPage();
