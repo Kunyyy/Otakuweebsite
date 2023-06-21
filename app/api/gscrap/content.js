@@ -1,8 +1,7 @@
 'use server';
 
 import cheerio from "cheerio";
-import puppeteer from "puppeteer-core";
-import chrome from "chrome-aws-lambda";
+import puppeteer from "puppeteer";
 import { PrismaClient } from "@prisma/client";
 
 const getting = async(parameters) => {
@@ -10,10 +9,7 @@ const getting = async(parameters) => {
   const url = `https://www3.gogoanimes.fi/category/${parameters}`;
 
   const browser = await puppeteer.launch({
-    headless: true,
-    args: chrome.args,
-    executablePath: await chrome.executablePath,
-    ignoreHTTPSErrors: true,
+    userDataDir: "$HOME/.cache/puppeteer",
   });
   const page = await browser.newPage();
   await page.goto(url);
