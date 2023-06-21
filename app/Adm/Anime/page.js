@@ -80,7 +80,7 @@ function Admin() {
             setDeskripsifull(desc);
         }
 
-        if (title && alias && jp && status && deskripsifull && preview) {            
+        if (title && alias && jp && deskripsifull && preview) {            
             const transfers = await previewUpload(title, alias, jp, status, deskripsifull, preview);
             if (transfers) {
                 alert(`Success => ID: ${transfers}`);
